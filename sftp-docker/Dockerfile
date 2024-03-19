@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y openssh-server
 
 # configure sftp user
 RUN useradd -rm -d /home/sftp_user -s /bin/bash -G sudo -u 10001 sftp_user 
-RUN echo "sftp_user:YOURPASSWORDHERE" | chpasswd 
+RUN echo "sftp_user:sftp_user_pwd" | chpasswd 
 
 # necessary sshd file
 RUN mkdir /var/run/sshd
